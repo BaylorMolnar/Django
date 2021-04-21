@@ -9,10 +9,11 @@ class TopicForm(forms.ModelForm):
         label = {"Text: ": ""}
 
 
-"""
 class EntryForm(forms.ModelForm):
     class Meta:
         model = Entry
         fields = ["text"]
         label = {"Text: ": ""}
-"""
+
+        widgets = {"text": forms.Textarea(attrs={"cols": 80})}
+        # this is to make text box bigger
