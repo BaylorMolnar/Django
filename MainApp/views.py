@@ -13,13 +13,13 @@ def index(request):
 
 
 @login_required
-def topics1(request):
+def topics(request):
     topics = Topic.objects.filter(owner=request.user).order_by(
         "date_added"
     )  # this is from the model.py file (to get descending you put a - in front
 
     context = {"topics": topics}
-    return render(request, "MainApp/topics1.html", context)
+    return render(request, "MainApp/topics.html", context)
 
 
 @login_required
